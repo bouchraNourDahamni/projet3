@@ -1,0 +1,238 @@
+<mat-tab-group (selectedTabChange)="changedTab($event)">
+    <mat-tab label="Jouer">
+        <ol>
+            <li>Chercher une partie</li>
+            En appuyant sur "Jouer!", une fenêtre s'affiche depuis laquelle vous pouvez sélectionner le mode de jeu que vous désirez, ainsi que la
+            difficulté.
+            <br /><br />
+            La difficulté détermine avant tout la complexité des dessins que vous verrez en cours de partie. Plus de détails sont donnés à travers les
+            prochaines sections.
+            <br /><br />
+            <img src="assets/images/guide/chercherPartie.gif" />
+            <br /><br />
+
+            <li>Mode de jeu Solo</li>
+            Ce mode de jeu consiste à deviner en rafale des dessins tracés par un joueur virtuel dans un temps limité. Vous êtes seul et avez un
+            nombre restreint de tentatives pour deviner.
+            <br /><br />
+            La partie ne se termine que lorsque le temps imparti est écoulé: si vous épuisez vos tentatives, le joueur virtuel passera simplement à un
+            autre dessin. Chaque bonne réponse octroie un point ainsi que du temps bonus qui vous permettra de prolonger la partie... et possiblement
+            de marquer plus de points!
+            <br /><br />
+            <strong>Facile</strong>
+            <br />
+            <ul>
+                <li>Tentatives par dessin : 5</li>
+                <li>Temps initial : 2 minutes</li>
+                <li>Temps bonus offert : 8 secondes</li>
+            </ul>
+            <br />
+            <strong>Moyen</strong
+            ><br />
+            <ul>
+                <li>Tentatives par dessin : 3</li>
+                <li>Temps initial : 1 minute</li>
+                <li>Temps bonus offert : 6 secondes</li>
+            </ul>
+            <br />
+            <strong>Difficile</strong
+            ><br />
+            <ul>
+                <li>Tentatives par dessin : 1</li>
+                <li>Temps initial : 30 secondes</li>
+                <li>Temps bonus offert : 4 secondes</li>
+            </ul>
+            <br />
+            <img src="assets/images/guide/solo.gif" />
+            <br /><br />
+
+            <li>Mode de jeu Classique</li>
+            Ce mode nécessite entre 2 et 4 joueurs. Deux équipes s'affrontent à tour de rôle à 2 contre 2 pour tenter de deviner le plus de mots. À
+            chaque tour, une personne reçoit le crayon ainsi qu'un mot à faire deviner à son coéquipier. En cas de bonne réponse, l'équipe marque un
+            point, sinon, l'équipe adverse a un droit de réplique. Si les deux équipes ratent leur chance, personne n'obtient de point et le crayon
+            est donné à l'équipe qui ne dessinait pas.
+            <br /><br />
+            À noter qu'avec moins de 4 joueurs, les équipes seront complétées avec des joueurs virtuels qui dessineront pour l'équipe tout au long de
+            la partie.
+            <br /><br />
+
+            <li>Créer une partie</li>
+            Pour créer une partie en mode classique, il suffit d'appuyer sur le symbole "+" sur la page suivante:
+            <br /><br />
+            <img src="assets/images/guide/createGame.gif" />
+            <br /><br />
+
+            <!-- <li>Rafraichir la liste de partie</li>
+            Le carrousel de dessin permet de visualiser l’ensemble des dessins que vous créez.
+            <br />
+            Vous pouvez sélectionner les dessins pour reprendre un travail en cours et vous pouvez également effacer un dessin pour annuler un travail
+            que vous ne souhaitez pas conserver. Il est également possible de filtrer les dessins en fonctions des étiquettes qui leur sont associées.
+            <br />
+            <img src="assets/images/guide/refreshLobby.gif" />
+            <br /> -->
+
+            <li>Salle d'attente</li>
+            Une fois une partie rejointe, vous serez redirigé dans une salle d'attente, le temps de rassembler d'autres joueurs.
+            <br /><br />
+            <img src="assets/images/guide/infoPartie.gif" />
+            <br /><br />
+
+            <li>Envoyer une réponse</li>
+            La barre de clavardage sert autant à communiquer librement qu'à transmettre des tentatives pour deviner. Lors d'une tentative de réponse, vous devez écrire le mot sans accent,
+            au singulier et sans espace.
+            <br /><br />
+            Voici quoi faire pour envoyer une réponse:
+            <br /><br />
+            <img src="assets/images/guide/sendAnswer.gif" />
+            <br /><br />
+
+            <li>Demander un indice</li>
+            Un certain nombre d'indices est associé à chaque mot. Pour les recevoir, il suffit d'appuyer sur le bouton prévu à cet effet de la manière
+            suivante:
+            <br /><br />
+            <img src="assets/images/guide/hint.gif" />
+            <br /><br />
+            Vous ne serez pas pénalisé pour avoir demandé des indices, mais soyez sûr de vous, car vos adversaires les verront aussi!
+        </ol>
+    </mat-tab>
+
+    <mat-tab label="Création paire mot-image">
+        <ol>
+            Sur Draw It Up!, il est possible de créer ses propres paires mot-image. Celles-ci seront sauvegardées et pourront être présentées à tous
+            les joueurs lors d'une partie.<br /><br />
+
+            <li>Prévisualisation des dessins</li>
+            Avant d'enregistrer votre dessin, vous pouvez le prévisualiser: c'est ainsi que les joueurs virtuels reproduiront votre oeuvre. De plus,
+            de multiples façons de reproduire le dessin s'offrent à vous, il suffit d'en sélectionner une avant la prévisualisation, allez les
+            explorer!
+            <br /><br />
+            <img src="assets/images/guide/previsual.gif" />
+            <br /><br />
+
+            <li>Effacer complètement le dessin</li>
+            Le dessin ne vous plaît pas? Épargnez-vous du temps avec la fonction "effacer dessin", qui s'occupera de vider entièrement la zone de
+            dessin:
+            <br /><br />
+            <img src="assets/images/guide/newDessin.gif" />
+            <br /><br />
+
+            <li>Sauvegarder la paire mot-image</li>
+            Le dessin vous plaît? Parfait, passons à l'enregistrement! La fenêtre suivante vous permettra de donner un nom à votre oeuvre, lui
+            associer des indices, ainsi qu'une difficulté pour les sessions de jeu.
+            <br /><br />
+            N'hésitez pas à laisser votre trace!
+            <br /><br />
+            <img src="assets/images/guide/saveServeur.gif" />
+            <br /><br />
+        </ol>
+    </mat-tab>
+
+    <mat-tab label="Dessiner">
+        <ol>
+            <li>Crayon</li>
+            Le crayon permet de dessiner sur la zone de dessin en enfonçant le bouton droit de la souris et en faisant des traits. Lorsque cet outil
+            est sélectionné, il est possible de choisir une épaisseur ainsi qu'une couleur dans le panneau d'attributs.
+            <br /><br />
+            <img src="assets/images/guide/epaisseur.gif" />
+            <br /><br />
+            <li>Efface</li>
+            L'efface permet d'effacer des traits présents sur la zone de dessin en enfonçant le bouton droit de la souris et en déplaçant l'outil.
+            Lorsque cet outil est sélectionné, il est possible de choisir une épaisseur dans le panneau d'attributs.
+            <br /><br />
+            <img src="assets/images/guide/efface.gif" />
+            <br /><br />
+            <li>Palette de couleur</li>
+            La palette de couleurs permet de sélectionner une couleur de trait. L'outil présente aussi l'historique des dix dernières couleurs
+            utilisées.
+            <br /><br />
+            <img src="assets/images/guide/couleur.gif" />
+            <br /><br />
+            <li>Annuler-Refaire</li>
+            L’option "annuler" permet d'annuler les dernières actions qui ont été exécutées depuis le début du travail. L’option "refaire" permet de
+            rétablir les actions annulées.
+            <br /><br />
+            <img src="assets/images/guide/undo.gif" />
+            <br /><br />
+            <li>Outil Grille</li>
+            L’outil grille permet de superposer à la surface de travail un grillage, afin de visualiser avec plus de précision les dimensions du
+            travail en cours. Il est possible de modifier l’opacité et l’espacement de la grille via le panneau d’attributs. De plus, les touches “+”
+            et “-” servent de raccourcis pour modifier l’espacement de la grille.
+            <br /><br />
+            <img src="assets/images/guide/grille.gif" />
+            <br />
+        </ol>
+    </mat-tab>
+
+    <mat-tab label="Clavardage">
+        <ol>
+            <li>Envoyer un message</li>
+            Pour clavarder, il suffit d'entrer un message dans la barre de texte à la droite de l'écran, puis d'appuyer sur le bouton "envoyer" de la
+            manière suivante:
+            <br /><br />
+            À noter que la touche "Entrée" peut également être utilisée pour envoyer.
+            <br /><br />
+            <img src="assets/images/guide/envoyerMessage.gif" />
+            <br /><br />
+
+            <li>Créer un canal de discussion</li>
+            Il est possible de créer un nouveau salon de clavardage en appuyant sur le bouton "+" à la droite de l'écran. Sur la nouvelle fenêtre, le
+            nom du salon peut être choisi, ainsi que les membres qui feront partie du groupe.
+            <br /><br />
+            <img src="assets/images/guide/createChat.gif" />
+            <br /><br />
+
+            <li>Ajouter un membre</li>
+            Dans le cas d'un salon de clavardage existant, en appuyant sur le bouton à la droite de "Créer un canal de discussion", il est possible
+            d'ajouter des personnes au salon:
+            <br /><br />
+            <img src="assets/images/guide/addMember.gif" />
+            <br /><br />
+
+            <li>Changer de canal</li>
+            Pour alterner entre les différents salons de clavardage auxquels vous avez accès, appuyez sur la barre de choix suivante:
+            <br /><br />
+            <img src="assets/images/guide/changeChat.gif" />
+            <br /><br />
+
+            <li>Ouvrir une fenêtre de clavardage</li>
+            La fenêtre de clavardage peut être détachée en une nouvelle fenêtre de la façon suivante:
+            <br /><br />
+            <img src="assets/images/guide/window.gif" />
+            <br /><br />
+
+            <li>Supprimer un canal de discussion</li>
+            L'icône de corbeille permet de supprimer un canal de discussion:
+            <br /><br />
+            <img src="assets/images/guide/supprimer.gif" />
+            <br />
+        </ol>
+    </mat-tab>
+    <mat-tab label="Profil et Classement">
+        <ol>
+            <li>Profil d'utilisateur</li>
+            Votre profil contient toutes sortes d'informations rattachées à votre compte, dont vos statistiques et historique de jeu. Voici comment
+            accéder à ces informations:
+            <br /><br />
+            <img src="assets/images/guide/profil.gif" />
+            <br /><br />
+
+            <li>Classement</li>
+            Le classement permet de voir où vous vous situez par rapport aux autres joueurs selon vos statistiques de jeu. Il y a 4 catégories:
+            <br />
+            <ul>
+                <li>Nombre de parties jouées (tous modes confondus)</li>
+                <li>Nombre de parties gagnées (pour le mode solo, vous êtes un vainqueur à nos yeux si vous arrivez à deviner 1 mot)</li>
+                <li>Temps moyen des parties jouées (en minutes)</li>
+                <li>Temps de jeu total (en heures)</li>
+            </ul>
+            <br /><br />
+            Plus gros sont les chiffres, mieux vous vous positionnez... Alors n'attendez plus et allez jouer!
+            <br /><br />
+            <img src="assets/images/guide/classement.gif" />
+            <br />
+        </ol>
+    </mat-tab>
+</mat-tab-group>
+<div mat-dialog-actions>
+    <button mat-button id="guideButton" (click)="onNoClick()">Fermer guide</button>
+</div>

@@ -1,0 +1,51 @@
+<!--code used in this file was taken from https://getstream.io/blog/how-to-create-a-chat-app-with-angular-9/#signing-up-for-stream-->
+<div id="chat-container" class="container">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-select [(ngModel)]="selected" (selectionChange)="changeChat()" [placeholder]="selected">
+                <mat-option *ngFor="let chatroom of chatIdList" [value]="chatroom">{{ chatroom }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="mesgs">
+        <div class="msg_history" id="msg_history">
+            <li class="message" *ngFor="let message of currentChatroom.history">
+                <div *ngIf="message.email !== currentEmail; then incoming_msg; else outgoing_msg"></div>
+                <ng-template #incoming_msg>
+                    <div class="incoming_msg_zone">
+                        <div class="incoming_msg_username">
+                            <p>{{ message.email }}</p>
+                        </div>
+                        <div class="incoming_msg">
+                            <div class="incoming_withd_msg">
+                                <p>{{ message.message }}</p>
+                            </div>
+                        </div>
+                        <div class="incoming_msg_time">
+                            <p>{{ message.sendDate }}</p>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template #outgoing_msg>
+                    <div class="outgoing_msg">
+                        <div class="incoming_msg">
+                            <div class="outgoing_withd_msg">
+                                <p>{{ message.message }}</p>
+                            </div>
+                        </div>
+                        <div class="outgoing_msg_time">
+                            <p>{{ message.sendDate }}</p>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+        </div>
+
+        <div class="type_msg">
+            <form class="input_msg_write" (ngSubmit)="sendMessage()">
+                <input type="text" class="write_msg" placeholder="Type a message" name="newMessage" [(ngModel)]="newMessage" id="chatInput" />
+                <button class="msg_send_btn" type="button" (click)="sendMessage()">Send</button>
+            </form>
+        </div>
+    </div>
+</div>

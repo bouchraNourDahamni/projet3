@@ -1,0 +1,38 @@
+{
+  "logs": [
+    {
+      "outputFile": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\lint\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v28\\values-v28.xml",
+      "map": [
+        {
+          "source": "C:\\Users\\Gerard\\.gradle\\caches\\transforms-2\\files-2.1\\612da0a59bad0f9ec1b95c928707fa8e\\appcompat-1.1.0\\res\\values-v28\\values-v28.xml",
+          "from": {
+            "startLines": "2,3,4,8",
+            "startColumns": "4,4,4,4",
+            "startOffsets": "55,130,217,447",
+            "endLines": "2,3,7,11",
+            "endColumns": "74,86,12,12",
+            "endOffsets": "125,212,442,684"
+          },
+          "to": {
+            "startLines": "10,11,12,16",
+            "startColumns": "4,4,4,4",
+            "startOffsets": "755,830,917,1147",
+            "endLines": "10,11,15,19",
+            "endColumns": "74,86,12,12",
+            "endOffsets": "825,912,1142,1384"
+          }
+        },
+        {
+          "source": "C:\\Users\\Gerard\\.gradle\\caches\\transforms-2\\files-2.1\\01ffab6bea8036af4c6baae11bd97d59\\material-1.1.0\\res\\values-v28\\values-v28.xml",
+          "from": {
+            "startLines": "2,3,4,5,6,7,8,9",
+            "startColumns": "4,4,4,4,4,4,4,4",
+            "startOffsets": "55,143,231,319,407,494,581,668",
+            "endColumns": "87,87,87,87,86,86,86,86",
+            "endOffsets": "138,226,314,402,489,576,663,750"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<mat-button-toggle-group #chooseAvatar="matButtonToggleGroup" [value]="chosenAvatar"
+  (change)="setAvatar(chooseAvatar.value)">
+  <mat-button-toggle value="/avatar/1.png">
+    <img src="http://drawitup.ddns.net/avatar/1.png">
+  </mat-button-toggle>
+  <mat-button-toggle value="/avatar/2.png">
+    <img src="http://drawitup.ddns.net/avatar/2.png">
+  </mat-button-toggle>
+  <mat-button-toggle value="/avatar/3.png">
+    <img src="http://drawitup.ddns.net/avatar/3.png">
+  </mat-button-toggle>
+  <mat-button-toggle value="/avatar/4.png">
+    <img src="http://drawitup.ddns.net/avatar/4.png">
+  </mat-button-toggle>
+  <mat-button-toggle value="/avatar/default.jpg">
+    <img src="http://drawitup.ddns.net/avatar/default.jpg">
+  </mat-button-toggle>
+</mat-button-toggle-group>

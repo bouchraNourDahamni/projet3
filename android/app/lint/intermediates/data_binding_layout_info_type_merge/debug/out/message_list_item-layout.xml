@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Layout layout="message_list_item" modulePackage="clientleger.faismoiundessin"
+    filePath="app\src\main\res\layout\message_list_item.xml" directory="layout" isMerge="false"
+    isBindingData="false" rootNodeType="android.widget.RelativeLayout">
+    <Targets>
+        <Target tag="layout/message_list_item_0" view="RelativeLayout">
+            <Expressions />
+            <location startLine="1" startOffset="0" endLine="58" endOffset="16" />
+        </Target>
+        <Target id="@+id/receivedUsername" view="TextView">
+            <Expressions />
+            <location startLine="6" startOffset="4" endLine="17" endOffset="37" />
+        </Target>
+        <Target id="@+id/receivedMessage" view="TextView">
+            <Expressions />
+            <location startLine="19" startOffset="4" endLine="30" endOffset="37" />
+        </Target>
+        <Target id="@+id/sentUsername" view="TextView">
+            <Expressions />
+            <location startLine="32" startOffset="4" endLine="43" endOffset="37" />
+        </Target>
+        <Target id="@+id/sentMessage" view="TextView">
+            <Expressions />
+            <location startLine="45" startOffset="4" endLine="56" endOffset="37" />
+        </Target>
+    </Targets>
+</Layout>

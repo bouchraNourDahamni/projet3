@@ -1,0 +1,61 @@
+.container {
+    background-color: #afb2bd;
+    width: 100%;
+    z-index: 0;
+}
+
+.buttonDiv{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.wordImageDiv{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.custom-style {
+    font-size: 50px;
+    padding-right: 600px;
+    padding-left: 400px;
+}
+
+/*.tools {
+    display : inline-flex ;
+    height: 50px;*/
+.tools {
+    width: 100%;
+    display : inline ;
+}
+
+
+.team1{
+    font-size: 25px;
+    height: 0px;
+    width : 300px;
+    padding-right:50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display : inline ;
+}
+
+.score{
+    font-size: 25px;
+    height: 0px;
+    display: inline;
+}
+
+.ScoreRole{
+    display: inline; 
+}
+
+.role{
+    font-size: 25px;
+    height: 0px;
+    display: inline;
+    padding-left: 400px;
+}

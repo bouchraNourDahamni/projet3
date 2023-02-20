@@ -1,0 +1,31 @@
+<button mat-raised-button (click)="sendImage()">Envoyer l'image au serveur</button>
+<button mat-raised-button (click)="previewImage()">Prévisualiser l’image</button>
+<br />
+<mat-button-toggle-group #group="matButtonToggleGroup" [value]="wordImageService.reconstruction" (change)="setReconstruction(group.value)">
+    <mat-button-toggle [value]="reconstruction.Conventionnel">{{ reconstruction.Conventionnel }} </mat-button-toggle>
+    <mat-button-toggle [value]="reconstruction.Aleatoire">{{ reconstruction.Aleatoire }} </mat-button-toggle>
+    <mat-button-toggle [value]="reconstruction.Panoramique">{{ reconstruction.Panoramique }} </mat-button-toggle>
+    <mat-button-toggle [value]="reconstruction.Centre">{{ reconstruction.Centre }}</mat-button-toggle>
+</mat-button-toggle-group>
+
+<mat-button-toggle-group
+    #groupPanoramique="matButtonToggleGroup"
+    *ngIf="group.value === reconstruction.Panoramique"
+    [value]="wordImageService.reconstructionCentre"
+    (change)="setReconstructionPanoramique(groupPanoramique.value)"
+>
+    <mat-button-toggle [value]="reconstructionPanoramique.LeftRight">{{ reconstructionPanoramique.LeftRight }} </mat-button-toggle>
+    <mat-button-toggle [value]="reconstructionPanoramique.RightLeft">{{ reconstructionPanoramique.RightLeft }} </mat-button-toggle>
+    <mat-button-toggle [value]="reconstructionPanoramique.UpDown">{{ reconstructionPanoramique.UpDown }} </mat-button-toggle>
+    <mat-button-toggle [value]="reconstructionPanoramique.DownUp">{{ reconstructionPanoramique.DownUp }}</mat-button-toggle>
+</mat-button-toggle-group>
+
+<mat-button-toggle-group
+    #groupCentre="matButtonToggleGroup"
+    *ngIf="group.value === reconstruction.Centre"
+    [value]="wordImageService.reconstructionPanoramique"
+    (change)="setReconstructionCentre(groupCentre.value)"
+>
+    <mat-button-toggle [value]="reconstructionCentre.InsideOut">{{ reconstructionCentre.InsideOut }} </mat-button-toggle>
+    <mat-button-toggle [value]="reconstructionCentre.OutsideIn">{{ reconstructionCentre.OutsideIn }} </mat-button-toggle>
+</mat-button-toggle-group>

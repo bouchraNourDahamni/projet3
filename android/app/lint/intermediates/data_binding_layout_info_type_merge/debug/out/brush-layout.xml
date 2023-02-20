@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Layout layout="brush" modulePackage="clientleger.faismoiundessin"
+    filePath="app\src\main\res\layout\brush.xml" directory="layout" isMerge="false"
+    isBindingData="false" rootNodeType="android.widget.RelativeLayout" rootNodeViewId="@+id/root">
+    <Targets>
+        <Target id="@+id/root" tag="layout/brush_0" view="RelativeLayout">
+            <Expressions />
+            <location startLine="1" startOffset="0" endLine="29" endOffset="16" />
+        </Target>
+        <Target id="@+id/brushSizeSeekBar" view="SeekBar">
+            <Expressions />
+            <location startLine="7" startOffset="4" endLine="16" endOffset="37" />
+        </Target>
+        <Target id="@+id/sizeValueTextView" view="TextView">
+            <Expressions />
+            <location startLine="18" startOffset="4" endLine="27" endOffset="45" />
+        </Target>
+    </Targets>
+</Layout>

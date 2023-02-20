@@ -1,0 +1,13 @@
+<div class="container container-flex" id="attribute-container">
+    <div class="title">
+        <img [src]="currentTool.iconDirectory" [alt]="currentTool.name" />
+        <h1>{{ capitalizeFirstLetter(currentTool.name) }}</h1>
+    </div>
+
+    <app-attribute-grid-display class="section" *ngIf="needsGridDisplayAttribute()"></app-attribute-grid-display>
+    <app-attributes-spacing class="section" *ngIf="needsSpacingAttribute()"></app-attributes-spacing>
+    <app-attributes-grid-opacity class="section" *ngIf="needsGridOpacityAttribute()"></app-attributes-grid-opacity>
+    <app-attributes-width class="section" *ngIf="needsWidthAttribute()"> </app-attributes-width>
+    <app-attributes-style class="section" *ngIf="needsStyleAttribute()"></app-attributes-style>
+    <app-attributes-color class="section"></app-attributes-color>
+</div>

@@ -1,0 +1,51 @@
+<div class="container">
+    <h1 class="title">Veuillez choisir vos options</h1>
+    <form [formGroup]="chatForm">
+        <h1 class="formTitle">Nom du chat</h1>
+        <br />
+        <div class="buttonLayout">
+            <div class="buttonName">
+                <input type="text" name="name" id="buttonName" placeholder="Nom du chat" formControlName="name" />
+            </div>
+        </div>
+    </form>
+    <br />
+    <br />
+    <div class="buttonLayout">
+        <form [formGroup]="emailForm">
+            <p>
+                <mat-form-field class="tags">
+                    <mat-chip-list #chipList aria-label="tag selection">
+                        <mat-label>Email des membres</mat-label>
+                        <mat-chip *ngFor="let tag of emailList" (removed)="remove(tag)">
+                            {{ tag }}
+                            <mat-icon matChipRemove>x</mat-icon>
+                        </mat-chip>
+                        <input
+                            type="email"
+                            placeholder="Ex:abc@abc.ca"
+                            [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            (matChipInputTokenEnd)="add($event)"
+                            formControlName="email"
+                        />
+                    </mat-chip-list>
+                </mat-form-field>
+            </p>
+        </form>
+    </div>
+    <div class="buttonLayout">
+        <label class="info">Appuie sur Entrée pour enregistrer le email</label>
+    </div>
+    <br />
+    <div class="sendButton">
+        <button mat-raised-button (click)="sendSetup()">Créer le chat</button>
+    </div>
+    <br />
+    <div *ngIf="!isValidForm" class="errorChoice">
+        <p style="color: red">Choisir un nom et une liste de participants</p>
+    </div>
+    <div *ngIf="!isValidEmail" class="errorChoice">
+        <p style="color: red">Veuillez entrer un email valide</p>
+    </div>
+</div>

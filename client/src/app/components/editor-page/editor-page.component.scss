@@ -1,0 +1,48 @@
+.container {
+    height: auto;
+    display: grid;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) var(--attributes-panel-width) 1fr 300px;
+    grid-template-areas: 'sidebar panel workspace textchat';
+    grid-gap: 0px;
+}
+
+.grid-area-sidebar {
+    grid-area: sidebar;
+}
+
+.grid-area-panel {
+    grid-area: panel;
+}
+
+.grid-area-workspace {
+    grid-area: workspace;
+    z-index: 0;
+}
+
+.grid-area-chat {
+    grid-area: textchat;
+    z-index: 1;
+}
+
+.sidebar-fixed-offset {
+    position: fixed;
+    left: 0;
+}
+
+.attribute-fixed-offset {
+    position: fixed;
+    left: var(--sidebar-width);
+}
+.workspace-fixed-offset{
+    position: fixed;
+}
+
+.chat-fixed-offset {
+    position: fixed;
+    right: 0;
+    width: 300px;
+}

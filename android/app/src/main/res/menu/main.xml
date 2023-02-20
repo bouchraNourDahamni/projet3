@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/brush_menu"
+        android:icon="@drawable/brush"
+        android:title="Crayon"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/erase_menu"
+        android:icon="@drawable/erase"
+        android:title="Efface"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/palette_menu"
+        android:icon="@drawable/palette"
+        android:title="Couleur"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/size_menu"
+        android:icon="@drawable/size"
+        android:title="Épaisseur"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/grid_menu"
+        android:icon="@drawable/grid"
+        android:title="Grille"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/undo_menu"
+        android:icon="@drawable/undo"
+        android:title="Annuler"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/redo_menu"
+        android:icon="@drawable/redo"
+        android:title="Refaire"
+        android:visible="false"
+        app:showAsAction="always" />
+
+
+</menu>
+

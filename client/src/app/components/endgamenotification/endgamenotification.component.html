@@ -1,0 +1,15 @@
+<h1 mat-dialog-title> Bravo!! <br> Vous avez fini le jeu. <br> Voici les resultats : </h1>
+<div mat-dialog-content>
+  <div class = "notification"  *ngIf="gameManagementService.isSoloGame; else elseBlock">
+    <p class = "notification" > Votre Score :  {{data.score}}</p>
+  </div>
+  <ng-template #elseBlock> 
+  <div class = "notification"  >
+    <p class = "notification" > Le score de l'équipe 1 est   {{data.team1Score}}</p>
+    <p class = "notification" > Le score de l'équipe 2 est   {{data.team2Score}}</p>
+ </div>
+</ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoclick()"  cdkFocusInitial > retourner au menu principale </button>
+</div>

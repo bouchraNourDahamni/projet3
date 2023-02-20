@@ -1,0 +1,51 @@
+#container {
+	width: 100%;
+	height: 100%;
+
+	#header {
+		display: flex;
+		justify-content: space-between;
+		h1 {
+			font-weight: 300;
+			display: inline;
+		}
+		mat-form-field {
+			width: 12.5rem;
+			padding-left: 2.5rem;
+		}
+	}
+
+	table {
+		width: 100%;
+		table-layout: fixed;
+		box-shadow: none;
+
+		th,
+		td {
+			overflow: hidden;
+			width: 100px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.mat-column-position {
+			width: 7%;
+		}
+		.mat-column-name {
+			width: 21%;
+		}
+		.mat-column-score {
+			width: 7%;
+		}
+
+		.icon {
+			font-size: 25px;
+		}
+		span:not(.icon) {
+			margin-left: 8px;
+		}
+		.poop {
+			margin-left: 4px;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+  "logs": [
+    {
+      "outputFile": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\lint\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
+      "map": [
+        {
+          "source": "C:\\Users\\Gerard\\.gradle\\caches\\transforms-2\\files-2.1\\612da0a59bad0f9ec1b95c928707fa8e\\appcompat-1.1.0\\res\\values-watch-v21\\values-watch-v21.xml",
+          "from": {
+            "startLines": "2,6,10",
+            "startColumns": "4,4,4",
+            "startOffsets": "55,271,499",
+            "endLines": "5,9,13",
+            "endColumns": "12,12,12",
+            "endOffsets": "266,494,724"
+          }
+        }
+      ]
+    }
+  ]
+}

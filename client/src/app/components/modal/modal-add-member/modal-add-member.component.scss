@@ -1,0 +1,60 @@
+.container{
+    width: 400px;
+    height: 200px;
+}
+.form{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    justify-content: center;
+}
+.title{
+    text-align: center;
+    color: #302e40;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+
+.formTitle{
+    text-align: center;
+    color: #302e40;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+.buttonLayout{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonName {
+    display: block;
+}
+
+.sendButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.errorChoice{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.name,
+.tags {
+    text-align: center;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+
+.info {
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Helvetica;
+}

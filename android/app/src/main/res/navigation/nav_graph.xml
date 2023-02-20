@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainMenuFragment">
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="clientleger.faismoiundessin.ui.fragments.MainMenuFragment"
+        android:label="MainMenuFragment">
+        <action
+            android:id="@+id/action_mainMenuFragment_to_gameOptionsFragment"
+            app:destination="@id/gameOptionsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_profilFragment"
+            app:destination="@id/profilFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_leaderboardFragment"
+            app:destination="@id/leaderboardFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_tutorialFragment"
+            app:destination="@id/tutorialFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/drawFragment"
+        android:name="clientleger.faismoiundessin.ui.fragments.DrawFragment"
+        android:label="DrawFragment">
+        <argument
+            android:name="gameID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_drawFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOptionsFragment"
+        android:name="clientleger.faismoiundessin.ui.fragments.GameOptionsFragment"
+        android:label="GameOptionsFragment">
+        <action
+            android:id="@+id/action_gameOptionsFragment_to_gameListFragment"
+            app:destination="@id/gameListFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+            android:id="@+id/action_gameOptionsFragment_to_drawFragment"
+            app:destination="@id/drawFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/lobbyFragment"
+        android:name="clientleger.faismoiundessin.ui.fragments.LobbyFragment"
+        android:label="LobbyFragment">
+        <argument
+            android:name="gameID"
+            app:argType="string" />
+        <argument
+            android:name="chatID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lobbyFragment_to_drawFragment"
+            app:destination="@id/drawFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+            android:id="@+id/action_lobbyFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameListFragment"
+        android:name="clientleger.faismoiundessin.ui.fragments.GameListFragment"
+        android:label="fragment_game_list"
+        tools:layout="@layout/fragment_game_list">
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="difficulty"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_gameListFragment_to_lobbyFragment"
+            app:destination="@id/lobbyFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="clientleger.faismoiundessin.ui.fragments.ProfilFragment"
+        android:label="profil_fragment"
+        tools:layout="@layout/profil_fragment" />
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="clientleger.faismoiundessin.ui.fragments.LeaderboardFragment"
+        android:label="fragment_leaderboard"
+        tools:layout="@layout/fragment_leaderboard" />
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="clientleger.faismoiundessin.ui.fragments.TutorialFragment"
+        android:label="fragment_tutorial"
+        tools:layout="@layout/fragment_tutorial" />
+</navigation>

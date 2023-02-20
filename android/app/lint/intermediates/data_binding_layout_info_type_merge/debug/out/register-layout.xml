@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Layout layout="register" modulePackage="clientleger.faismoiundessin"
+    filePath="app\src\main\res\layout\register.xml" directory="layout" isMerge="false"
+    isBindingData="false" rootNodeType="androidx.constraintlayout.widget.ConstraintLayout">
+    <Targets>
+        <Target tag="layout/register_0" view="androidx.constraintlayout.widget.ConstraintLayout">
+            <Expressions />
+            <location startLine="1" startOffset="0" endLine="227" endOffset="51" />
+        </Target>
+        <Target id="@+id/tv_heading" view="TextView">
+            <Expressions />
+            <location startLine="9" startOffset="4" endLine="21" endOffset="9" />
+        </Target>
+        <Target id="@+id/layout_first_name"
+            view="com.google.android.material.textfield.TextInputLayout">
+            <Expressions />
+            <location startLine="38" startOffset="12" endLine="62" endOffset="67" />
+        </Target>
+        <Target id="@+id/et_first_name" view="EditText">
+            <Expressions />
+            <location startLine="50" startOffset="16" endLine="61" endOffset="21" />
+        </Target>
+        <Target id="@+id/layout_last_name"
+            view="com.google.android.material.textfield.TextInputLayout">
+            <Expressions />
+            <location startLine="65" startOffset="12" endLine="89" endOffset="67" />
+        </Target>
+        <Target id="@+id/et_last_name" view="EditText">
+            <Expressions />
+            <location startLine="77" startOffset="16" endLine="88" endOffset="21" />
+        </Target>
+        <Target id="@+id/layout_email" view="com.google.android.material.textfield.TextInputLayout">
+            <Expressions />
+            <location startLine="92" startOffset="12" endLine="117" endOffset="67" />
+        </Target>
+        <Target id="@+id/et_email" view="EditText">
+            <Expressions />
+            <location startLine="104" startOffset="16" endLine="116" endOffset="21" />
+        </Target>
+        <Target id="@+id/layout_pseudo"
+            view="com.google.android.material.textfield.TextInputLayout">
+            <Expressions />
+            <location startLine="119" startOffset="12" endLine="143" endOffset="67" />
+        </Target>
+        <Target id="@+id/et_pseudo" view="EditText">
+            <Expressions />
+            <location startLine="131" startOffset="16" endLine="142" endOffset="21" />
+        </Target>
+        <Target id="@+id/layout_password"
+            view="com.google.android.material.textfield.TextInputLayout">
+            <Expressions />
+            <location startLine="146" startOffset="12" endLine="171" endOffset="67" />
+        </Target>
+        <Target id="@+id/et_password" view="EditText">
+            <Expressions />
+            <location startLine="158" startOffset="16" endLine="170" endOffset="21" />
+        </Target>
+        <Target id="@+id/layout_repeat_password"
+            view="com.google.android.material.textfield.TextInputLayout">
+            <Expressions />
+            <location startLine="174" startOffset="12" endLine="199" endOffset="67" />
+        </Target>
+        <Target id="@+id/et_repeat_password" view="EditText">
+            <Expressions />
+            <location startLine="186" startOffset="16" endLine="198" endOffset="21" />
+        </Target>
+        <Target id="@+id/bt_register" view="Button">
+            <Expressions />
+            <location startLine="202" startOffset="12" endLine="218" endOffset="58" />
+        </Target>
+    </Targets>
+</Layout>

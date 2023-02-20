@@ -1,0 +1,30 @@
+[
+  {
+    "merged": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\lint\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\register.xml",
+    "source": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\src\\main\\res\\layout\\register.xml"
+  },
+  {
+    "merged": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\lint\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\message_list_item.xml",
+    "source": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\src\\main\\res\\layout\\message_list_item.xml"
+  },
+  {
+    "merged": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\lint\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\menu.xml",
+    "source": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\src\\main\\res\\layout\\menu.xml"
+  },
+  {
+    "merged": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\lint\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\brush.xml",
+    "source": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\src\\main\\res\\layout\\brush.xml"
+  },
+  {
+    "merged": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\lint\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\main.xml",
+    "source": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\src\\main\\res\\layout\\main.xml"
+  },
+  {
+    "merged": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\lint\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\login.xml",
+    "source": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\src\\main\\res\\layout\\login.xml"
+  },
+  {
+    "merged": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\lint\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\chat.xml",
+    "source": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\src\\main\\res\\layout\\chat.xml"
+  }
+]

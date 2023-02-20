@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="buttonLayout">
+        <form [formGroup]="emailForm">
+            <p>
+                <mat-form-field class="tags">
+                    <mat-chip-list #chipList aria-label="tag selection">
+                        <mat-label>Email des nouveaux membres</mat-label>
+                        <mat-chip *ngFor="let tag of emailList" (removed)="remove(tag)">
+                            {{ tag }}
+                            <mat-icon matChipRemove>x</mat-icon>
+                        </mat-chip>
+                        <input
+                            type="email"
+                            placeholder="Ex:abc@abc.ca"
+                            [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            (matChipInputTokenEnd)="add($event)"
+                            formControlName="email"
+                        />
+                    </mat-chip-list>
+                </mat-form-field>
+            </p>
+        </form>
+    </div>
+    <div class="buttonLayout">
+        <label class="info">Clique sur Entré pour enregistrer le email</label>
+    </div>
+    <br />
+    <div class="sendButton">
+        <button mat-raised-button (click)="sendSetup()">Ajouter les membres</button>
+    </div>
+    <br />
+    <div *ngIf="!isValidEmail" class="errorChoice">
+        <p style="color: red">Veuiller entrer un email valide</p>
+    </div>
+</div>

@@ -1,0 +1,235 @@
+### V1.12
+#### WEBSOCKETS
+
+### REGISTER to session
+#WS http://drawitup.ddns.net/session/{email}
+
+### JOIN to chat
+#WS http://drawitup.ddns.net/chat/join/{roomID}
+
+### JOIN game
+#WS http://drawitup.ddns.net/game/connect/{gameID}/{email}
+
+#### HTTP
+### register
+# * MODIFY DB
+POST http://drawitup.ddns.net/register
+Content-Type: application/json
+
+{
+    "email": "benjamin.temp.saintcyr@gmail.com",
+    "pseudo": "ben",
+    "lastName": "saint-cyr",
+    "firstName": "benjamin",
+    "password": "1234Qwerty"
+}
+
+#### LOGIN
+### ex: good login 200
+POST http://drawitup.ddns.net/login
+content-type: application/json
+
+{
+    "email":  "benjamin.saintcyr@gmail.com",
+    "password": "newPassword"
+}
+
+### ex: bad login 401
+POST http://drawitup.ddns.net/login
+content-type: application/json
+
+{
+    "email":  "test@gmail.com",
+    "password": "notmypassword"
+}
+
+### INFO
+
+### get user info
+GET http://drawitup.ddns.net/user/test@gmail.com
+
+### get chat session info
+GET http://drawitup.ddns.net/info/chats
+
+### get specific chat session info
+GET http://drawitup.ddns.net/info/chat/1
+
+### get game channels info
+GET http://drawitup.ddns.net/info/games
+
+### get game channels info
+GET http://drawitup.ddns.net/info/game/1
+
+### get game trace
+GET http://drawitup.ddns.net/info/game/trace/{gameID}
+
+### get sessions info
+GET http://drawitup.ddns.net/info/sessions
+
+#### LEADERBOARD
+
+### get players
+GET http://drawitup.ddns.net/leaderboard/game
+
+### win-rate
+GET http://drawitup.ddns.net/leaderboard/win-rate
+
+### average-time
+GET http://drawitup.ddns.net/leaderboard/average-time
+
+### most-time
+GET http://drawitup.ddns.net/leaderboard/most-time
+
+#### CREATE
+
+### new game channel
+# * MODIFY SERVER
+# * MODIFY DB
+POST http://drawitup.ddns.net/new/game
+content-type: application/json
+
+{
+    "type" : "Classique",
+    "difficulty" : "Moyen"
+}
+
+### new chat channel
+# * MODIFY SERVER
+# * MODIFY DB
+POST http://drawitup.ddns.net/new/chat
+content-type: application/json
+
+{
+	"name" : "TEST",
+	"members" : ["test@gmail.com"]
+}
+
+### rename chat
+POST http://drawitup.ddns.net/chat/rename
+content-type: application/json
+
+{
+    "name": "TEST",
+    "chatID": 19
+}
+
+### Add new member
+POST http://drawitup.ddns.net/chat/new/member
+content-type: application/json
+
+{
+    "email": "test@gmail.com",
+    "chatID": 1
+}
+
+### Delete chat
+# chatID
+GET http://drawitup.ddns.net/chat/delete/773
+
+### get user chats
+GET http://drawitup.ddns.net/info/user/chats/test@gmail.com
+
+### pair mot/image
+# * MODIFY DB
+POST http://drawitup.ddns.net/game/newPair
+content-type: application/json
+
+{
+    "word": "pomme",
+    "image": [{
+            "pathdata": [{
+                    "x": 2,
+                    "y": 2
+                },
+                {
+                    "x": 2,
+                    "y": 3
+                }
+            ],
+            "color": "red",
+            "size": 3,
+            "opacity": 0.9
+        },
+        {
+            "pathdata": [{
+                    "x": 3,
+                    "y": 3
+                },
+                {
+                    "x": 3,
+                    "y": 4
+                }
+            ],
+            "color": "red",
+            "size": 3,
+            "opacity": 0.9
+        }
+    ]
+}
+
+#### START_GAME
+# * MODIFY SERVER
+GET  http://drawitup.ddns.net/game/start/{gameID}
+
+### LOBBY STATE UPDATE
+GET  http://drawitup.ddns.net/game/lobbyUpdate/{gameID}
+
+### NEXT GAME
+GET http://drawitup.ddns.net/game/next-turn/{gameID}
+
+#### START SERVER
+GET http://drawitup.ddns.net:8090/start
+
+#### GET SERVER LOGS
+GET http://drawitup.ddns.net:8090/logs
+
+#### RECOVERY
+
+### start
+POST http://drawitup.ddns.net/recovery/start
+Content-Type: application/json
+
+{
+    "email": "benjamin.saintcyr@gmail.com"
+}
+
+### confirm
+POST http://drawitup.ddns.net/recovery/confirm
+Content-Type: application/json
+
+{
+	"Email": "benjamin.saintcyr@gmail.com",
+	"Code": 7681060098055773137
+}
+
+### change
+POST http://drawitup.ddns.net/recovery/change
+Content-Type: application/json
+
+{
+    "email":  "benjamin.saintcyr@gmail.com",
+    "password": "newPassword"
+}
+
+#### trophies
+
+### detect
+# Detect if there are any new trophies
+POST http://drawitup.ddns.net/trophy/detect
+Content-Type: application/json
+
+{
+    "email": "benjamin.saintcyr@gmail.com"
+}
+### give
+# give someone a trophy
+POST http://drawitup.ddns.net/trophy/give
+Content-Type: application/json
+
+{
+    "email":  "benjamin.saintcyr@gmail.com",
+    "trophy": "use API.http"
+}
+
+#### AVATARS
+GET http://drawitup.ddns.net/avatars

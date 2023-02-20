@@ -1,0 +1,7 @@
+<div class="vertical-tabs flex flex-justify-content-center flex-align-items-center" [ngClass]="'vertical-tabs-' + variant">
+	<button *ngFor="let tab of tabs" mat-stroked-button color=""
+			[class.selected]="value === tab.value"
+			(click)="value = tab.value; change.emit(tab.value)">
+		{{tab.label}}
+	</button>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+    <h1 class="title">Veuillez choisir vos options</h1>
+    <form [formGroup]="gameForm">
+        <h1 class="formTitle">Mode de jeu</h1>
+        <br />
+        <div class="buttonLayout">
+            <div class="buttonMode">
+                <input type="radio" name="gamemode" id="buttonClassique" value="Classique" formControlName="gamemode" />
+                <label for="buttonClassique" unselectable>Mode Classique</label>
+            </div>
+            <div class="buttonMode">
+                <input type="radio" name="gamemode" id="buttonSolo" value="Solo" formControlName="gamemode" />
+                <label for="buttonSolo" unselectable>Sprint Solo</label>
+            </div>
+        </div>
+    </form>
+    <br />
+    <br />
+
+    <form [formGroup]="gameForm">
+        <h1 class="formTitle">Difficulté</h1>
+        <br />
+        <div class="buttonLayout">
+            <div class="buttonMode">
+                <input type="radio" name="difficulty" id="buttonFacile" value="Facile" formControlName="difficulty" />
+                <label for="buttonFacile" unselectable>Facile</label>
+            </div>
+            <div class="buttonMode">
+                <input type="radio" name="difficulty" id="buttonMoyen" value="Moyen" formControlName="difficulty" />
+                <label for="buttonMoyen" unselectable>Moyen</label>
+            </div>
+            <div class="buttonMode">
+                <input type="radio" name="difficulty" id="buttonDifficle" value="Difficile" formControlName="difficulty" />
+                <label for="buttonDifficle" unselectable>Difficile</label>
+            </div>
+        </div>
+    </form>
+    <br />
+    <br />
+    <br />
+    <div class="sendButton">
+        <button mat-raised-button (click)="sendSetup()">Chercher des parties</button>
+    </div>
+    <br />
+    <div *ngIf="!isValid" class="errorChoice">
+        <p style="color: red">Choisir un mode et une difficulté</p>
+    </div>
+</div>

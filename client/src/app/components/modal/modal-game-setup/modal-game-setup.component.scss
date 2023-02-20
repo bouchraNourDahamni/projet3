@@ -1,0 +1,70 @@
+.container{
+    width: 500px;
+    height: 400px;
+}
+.form{
+    width: 500px;
+    height: 400px;
+    display: flex;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    justify-content: center;
+}
+.title{
+    text-align: center;
+    color: #302e40;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+
+.formTitle{
+    text-align: center;
+    color: #302e40;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+.buttonLayout{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonMode {
+    display: block;
+}
+
+.buttonMode input {
+    display: none;
+}
+
+.buttonMode label {
+    background: #ccc;
+    border: 1px solid #888;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.buttonMode label:hover {
+    background-color: #ddd;
+}
+
+.buttonMode label:active,
+.buttonMode input:focus + label {
+    background-color: #aaa;
+}
+
+.buttonMode input:checked + label {
+    background-color: #401cdf;
+}
+.sendButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.errorChoice{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

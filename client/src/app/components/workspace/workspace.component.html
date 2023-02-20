@@ -1,0 +1,46 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<div #workzonecontainer id="workzone-container" class="container">
+    <div class="tools">
+        <!--<div *ngIf="this.gameManagementService.inGame">
+            <countdown #cd [config]="{ demand: true, notify: [], leftTime: time, format: 'mm:ss' }" class="custom-style"></countdown>
+        </div>-->
+
+        <div *ngIf="this.gameManagementService.inGame">
+            <countdown #cd [config]="{ leftTime: time, format: 'mm:ss' }" class="custom-style"></countdown>
+        </div>
+        <div class="wordImageDiv">
+            <app-word-image-pannel *ngIf="isWordImage"></app-word-image-pannel>
+        </div>
+        <div class="buttonDiv">
+            <button mat-raised-button (click)="hideChat()">
+                <mat-icon *ngIf="isChatEnable">keyboard_arrow_right</mat-icon>
+                <mat-icon *ngIf="!isChatEnable">keyboard_arrow_left</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div *ngIf="this.gameManagementService.inGame">
+        <div class="team1" *ngIf="this.gameManagementService.isSoloGame; else modeClassique">
+            <div>
+                <p class="score">Votre score : {{ this.gameManagementService.gameToJoin.soloAttributes.score }}</p>
+                <br />
+                <p class="score">Nombre de tentatives restantes : {{ this.gameManagementService.gameToJoin.soloAttributes.attempts }}</p>
+            </div>
+        </div>
+        <ng-template #modeClassique>
+            <div class="team1">
+                <div class="ScoreRole">
+                    <p class="score">Score de l'équipe 1 : {{ this.gameManagementService.gameToJoin.classicAttributes.teams[0].Score }}</p>
+                    <p class="role">{{ this.role }}</p>
+                    <br />
+                </div>
+                <div class="ScoreRole">
+                    <p class="score">Score de l'équipe 2 : {{ this.gameManagementService.gameToJoin.classicAttributes.teams[1].Score }}</p>
+                    <p class="role">Nombre de tour(s) restant(s) : {{ this.round }}</p>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+    <div height="0px" width="0px">
+        <app-drawing></app-drawing>
+    </div>
+</div>

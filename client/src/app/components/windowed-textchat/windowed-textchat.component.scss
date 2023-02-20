@@ -1,0 +1,138 @@
+/*code used in this file was taken from https://getstream.io/blog/how-to-create-a-chat-app-with-angular-9/#signing-up-for-stream*/
+
+/*Container*/
+.container {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 300;
+    background-color: rgb(139, 137, 137);
+    border-right: 1px solid rgb(33, 33, 59);
+    overflow: hidden;
+    user-select: none;
+    margin: auto;
+}
+
+/* Mesg/Msg/Message */
+.mesgs {
+	float: left;
+	padding: 10px 0px 0px 0px;
+	width: 100%;
+    height: 100vh;
+}
+
+.msg_history {
+	height: 80vh;
+    width: 100%;
+	overflow-y: auto;
+    overflow-x:hidden;
+}
+
+.message {
+	list-style-type: none;
+}
+
+/*Incoming*/
+.incoming_msg_username {
+	display: inline-block;
+	font-size: 12px;
+}
+
+.incoming_msg {
+	display: inline-block;
+	padding: 0 0 0 5px;
+	vertical-align: top;
+	width: 100%;
+}
+
+.incoming_withd_msg p {
+	background: #ebebeb none repeat scroll 0 0;
+	border-radius: 0px;
+	color: #646464;
+	font-size: 14px;
+	margin: 0;
+	padding: 5px 0px 5px 0px;
+	width: 50%;
+	word-break:break-word;
+}
+
+.incoming_msg_time {
+	font-size: 10px;
+}
+
+/*Outgoing*/
+.outgoing_msg {
+	overflow:hidden;
+	margin: 10px 0 10px;
+}
+
+.outgoing_withd_msg p {
+	background: #05728f none repeat scroll 0 0;
+	border-radius: 3px;
+	font-size: 14px;
+	margin: 0;
+	color: #fff;
+	padding: 5px 0px 5px 0px;
+	float: right;
+	width: 50%;
+	word-break:break-word;
+}
+
+.outgoing_msg_time {
+	font-size: 10px;
+	float: right;
+}
+
+
+/*Input message section*/
+.type_msg {
+	border-top: 1px solid #c4c4c4;
+	position: sticky;
+}
+	/*Input*/
+.input_msg_write {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	border: medium none;
+	color: #4c4c4c;
+	font-size: 15px;
+	min-height: 48px;
+	width: 100%;
+}
+
+.write_msg{
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	border: medium none;
+	color: #4c4c4c;
+	font-size: 15px;
+	min-height: 48px;
+	width: calc(100% - 80px);
+}
+	/*Buttons*/
+.msg_send_btn {
+	background: #05728f none repeat scroll 0 0;
+	border: medium none;
+	border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+	font-size: 17px;
+	height: 30px;
+	position: absolute;
+	right: 10px;
+	top: 11px;
+	width: 55px;
+}
+
+.chatroomButton{
+	list-style-type: none;
+	display: inline;
+}
+.createButton{
+	background: #05728f none repeat scroll 0 0;
+	border: medium none;
+	border-radius: 50%;
+    color: #fff;
+    width: 90px;
+}
+
+
+
+

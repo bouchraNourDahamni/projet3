@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Résultat de la manche</h1>
+<div mat-dialog-content>
+    <p>Il vous reste {{ data.round }} tour(s)</p>
+    <p>Le score de l'équipe 1 est {{ data.team1Score }}</p>
+    <p>Le score de l'équipe 2 est {{ data.team2Score }}</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button mat-button (click)="onNoclick()" cdkFocusInitial>Continue le jeu</button>
+</div>

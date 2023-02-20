@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="menu">
+        <h1 class="title">Draw It Up!</h1>
+        <button class="button4" (click)="openGameLobby()">Jouer!</button>
+        <button class="button1" routerLink="/word-image" routerLinkActive="active">Créer une paire mot-image</button>
+        <button class="button3" [routerLink]="['/profile', authentificationService.email]" routerLinkActive="active">Profil</button>
+        <button class="button3" [routerLink]="['/leaderboard']" routerLinkActive="active">Classement</button>
+        <button class="button3" (click)="openUserGuide()">Afficher le Guide d'utilisation</button>
+        <button class="button3" routerLink="/home" routerLinkActive="active" (click)="disconnect()">Déconnexion</button>
+        <div class="footer-item">
+            <p>© 2021 Polytechnique Montréal</p>
+        </div>
+    </div>
+    <div class="grid-area-chat">
+        <app-textchat class="chat-fixed-offset"></app-textchat>
+    </div>
+</div>

@@ -1,0 +1,139 @@
+@import '../../flex-box.scss';
+@import '../../theme.scss';
+
+mat-tab-group {
+
+    ::ng-deep mat-tab-header {
+        background-color: white;
+    }
+
+}
+
+.container {
+    display: flex;
+}
+
+.grid-area-chat {
+    grid-area: textchat;
+    z-index: 1;
+}
+
+.chat-fixed-offset {
+    position: fixed;
+    right: 0;
+    width: 302px;
+}
+.buttonDiv{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.profile {
+
+    width: 100%;
+    height: calc(100% - 6.25rem);
+    overflow: auto;
+    background-color: $main-background-color;
+
+    .profile-content {
+
+        min-height: calc(100% - 6.875rem);
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
+
+        .profile-description {
+            background-color: white;
+            box-shadow: 0.625rem 0.625rem 1.25rem 0 rgba(0, 0, 0, 0.05);
+            border-radius: 0.625rem;
+        }
+
+        .profile-menu {
+
+            align-self: flex-start;
+            min-width: 17.5rem;
+            flex: 1;
+
+            .profile-avatar {
+
+                padding: 0.9375rem 1.875rem;
+
+                h5 {
+                    fill: #606060;
+                    margin-right: 0.625rem;
+                    flex-shrink: 0;
+                }
+
+                h6 {
+                    margin: 0;
+                    font-weight: bold;
+                    font-size: large;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                }
+
+            }
+
+            .vertical-tabs {
+                padding: 1.875rem 1.875rem;
+            }
+
+            .profile-menu-item {
+                width: 100%;
+                background-color: white;
+                box-shadow: 0.625rem 0.625rem 1.25rem 0 rgba(0, 0, 0, 0.05);
+                border-radius: 0.625rem;
+                margin-bottom: 1.25rem;
+            }
+
+        }
+
+        .profile-description {
+            align-self: flex-start;
+            padding: 2rem 3.5rem;
+            margin-left: 3rem;
+            flex: 4;
+        }
+
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+@media only screen and (max-width: 50rem) {
+    .profile-sections {
+        flex-direction: column !important;
+    }
+
+	.profile-avatar {
+		padding: 0.9375rem 10% !important;
+	}
+
+    .profile-description {
+        margin-left: 0 !important;
+		width: 100% !important;
+		padding: 2.5rem 10% !important;
+    }
+
+	.vertical-tabs {
+		padding: 1.875rem 10% !important;
+	}
+
+    .profile-menu {
+        width: 100% !important;
+    }
+}
+
+.GameInfo{
+    background-color: white;
+	border-radius: 0.1875rem;
+}
+
+table {
+    width: 80%;
+}

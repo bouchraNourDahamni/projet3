@@ -1,0 +1,43 @@
+<div class="container">
+    <h1 class="title">Sauvegarder une paire mot-image</h1>
+    <p>
+        <mat-form-field class="name">
+            <mat-label>Mot à deviner</mat-label>
+            <input matInput [formControl]="drawingName" placeholder="Ex. carotte" />
+            <mat-error *ngIf="drawingName.invalid"> Entrer un mot à deviner </mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="tags">
+            <mat-chip-list #chipList aria-label="tag selection">
+                <mat-label>Indice(s)</mat-label>
+                <mat-chip *ngFor="let tag of tags" (removed)="remove(tag)">
+                    {{ tag }}
+                    <mat-icon matChipRemove>x</mat-icon>
+                </mat-chip>
+                <input
+                    placeholder="Ex:légume"
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    (matChipInputTokenEnd)="add($event)"
+                />
+            </mat-chip-list>
+            <mat-error *ngIf="chipList.errorState">Minimum 1 indice requis</mat-error>
+        </mat-form-field>
+    </p>
+    <mat-button-toggle-group
+        class="buttonGroup"
+        #group="matButtonToggleGroup"
+        [value]="wordImageService.wordImage.difficulty"
+        (change)="setDifficulty(group.value)"
+    >
+        <mat-button-toggle [value]="difficulty.Easy">{{ difficulty.Easy }} </mat-button-toggle>
+        <mat-button-toggle [value]="difficulty.Medium">{{ difficulty.Medium }} </mat-button-toggle>
+        <mat-button-toggle [value]="difficulty.Hard">{{ difficulty.Hard }} </mat-button-toggle>
+    </mat-button-toggle-group>
+    <div class="buttonGroup" mat-dialog-actions>
+        <button id="buttonCancel" mat-raised-button mat-dialog-close>Annuler</button>
+        <button id="buttonSaveServer" mat-raised-button [disabled]="!isValueValid()" (click)="saveToServer()">Sauvegarder</button>
+    </div>
+    <h6>Choisir un mot entre 1 et 50 caractères, et 1 à 15 indices entre 1 et 25 caractères</h6>
+</div>

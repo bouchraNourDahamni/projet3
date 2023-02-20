@@ -1,0 +1,16 @@
+clientleger/faismoiundessin/databinding/LoginBinding.java
+ clientleger.faismoiundessin.databinding.LoginBinding
+clientleger/faismoiundessin/BuildConfig.java
+ clientleger.faismoiundessin.BuildConfig
+clientleger/faismoiundessin/databinding/BrushBinding.java
+ clientleger.faismoiundessin.databinding.BrushBinding
+clientleger/faismoiundessin/databinding/MenuBinding.java
+ clientleger.faismoiundessin.databinding.MenuBinding
+clientleger/faismoiundessin/databinding/MessageListItemBinding.java
+ clientleger.faismoiundessin.databinding.MessageListItemBinding
+clientleger/faismoiundessin/databinding/MainBinding.java
+ clientleger.faismoiundessin.databinding.MainBinding
+clientleger/faismoiundessin/databinding/RegisterBinding.java
+ clientleger.faismoiundessin.databinding.RegisterBinding
+clientleger/faismoiundessin/databinding/ChatBinding.java
+ clientleger.faismoiundessin.databinding.ChatBinding

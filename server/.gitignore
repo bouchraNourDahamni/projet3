@@ -1,0 +1,7 @@
+.log/*
+bin/server
+test-client/*
+/node_modules
+
+*.out
+__debug_bin

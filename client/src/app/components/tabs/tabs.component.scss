@@ -1,0 +1,59 @@
+@import '../../flex-box.scss';
+@import '../../theme.scss';
+
+:host {
+	display: inline-block;
+	width: 100%;
+}
+
+.vertical-tabs {
+
+	align-self: flex-start;
+	flex-basis: 300px;
+
+	button {
+		width: 100%;
+		padding: 0px;
+		font-size: 18px;
+		font-weight: normal;
+		border-radius: 10px;
+		background-color: #F5F5F5;
+		border: none;
+		outline: none !important;
+		color: rgb(30, 30, 30);
+		text-align: left;
+		padding-left: 20px;
+		margin: 10px 0px;
+
+		span {
+			margin-right: 15px;
+			margin-top: -4px;
+		}
+
+	}
+
+	.selected {
+		-moz-box-shadow: 0px 0px 0px 1px $main-brand-color;
+		-webkit-box-shadow: 0px 0px 0px 1px $main-brand-color;
+		box-shadow: 0px 0px 0px 1px $main-brand-color;
+	}
+
+}
+
+.vertical-tabs-vertical {
+	flex-direction: column;
+	button {
+		margin: 5px 0;
+	}
+}
+
+.vertical-tabs-horizontal {
+	flex-direction: row;
+	margin: 0 -2px;
+	button {
+		margin: 0 2px;
+		border-radius: 20px;
+		flex: 1;
+		text-align: center;
+	}
+}

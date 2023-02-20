@@ -1,0 +1,51 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<div class="test">
+    <div class="buttonDiv">
+        <button mat-raised-button (click)="exitLobby()"><mat-icon>home</mat-icon></button>
+    </div>
+    <div class="waiting">
+        <div class="accordion">
+            <mat-accordion>
+                <!-- #docregion basic-panel -->
+                <!-- #docregion hide-toggle -->
+                <!-- #enddocregion hide-toggle -->
+                <h2>Bienvenue dans Draw It Up!</h2>
+                <!-- #enddocregion basic-panel -->
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title> Joueurs virtuels </mat-panel-title>
+                        <mat-panel-description> Les informations concernant les joueurs virtuels </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p class="information">Le nombre de joueurs virtuels : {{ this.gameInfo.virtualPlayers }}</p>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title> Joueurs humains </mat-panel-title>
+                        <mat-panel-description> Les informations concenrant les joueurs humains </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p class="information">Le nombre de joueurs humains : {{ this.gameInfo.humanPlayers }}</p>
+                    <br />
+                    <P class="information"> La liste des joueurs humains : </P>
+                    <li *ngFor="let player of gamePlayers">{{ player }}</li>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title> Jeu </mat-panel-title>
+                        <mat-panel-description> Les informations concernant le jeu </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p class="information">Difficulté : {{ this.gameInfo.difficulty }}</p>
+                    <p class="information">Type : {{ this.gameInfo.type }}</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <br />
+        <div class="startBut">
+            <button mat-raised-button [disabled]="isDisabled" mat-button type="button" class="btn btn-success" (click)="startGame()">
+                Commencer le jeu
+            </button>
+        </div>
+    </div>
+    <div class="grid-area-chat">
+        <app-textchat class="chat-fixed-offset"></app-textchat>
+    </div>
+</div>

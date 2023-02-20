@@ -1,0 +1,28 @@
+.container{
+    display: block;
+    width: 600px;
+    height: 500px;
+    justify-content: center;
+}
+.title {
+    text-align: center;
+    color: rgb(69, 66, 94);
+    font-size: 3em;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+
+.name,
+.tags {
+    text-align: center;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+
+p,
+h6,
+.buttonGroup{
+    width: 600px;
+    display: flex;
+    justify-content: center;
+}

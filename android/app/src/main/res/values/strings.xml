@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">Draw It Up!</string>
+    <string name="acceuil">Draw It Up!</string>
+    <string name="inscription_button">Inscription</string>
+
+    <string name="logout_button">Déconnexion</string>
+    <string name="recovery_button">Mot de passe oublié</string>
+
+    <string name="your_selected_size_is">Épaisseur choisie: %1$d</string>
+    <string name="choose_width">Épaisseur du trait</string>
+    <!-- Workaround to avoid "R.string.continue", that it's as a special class-word! D: -->
+    <string name="pick_color">Pick a color</string>
+
+    <!-- Strings used for fragments for navigation -->
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="deviner_la_r_ponse">Envoyer une réponse!</string>
+    <string name="envoyer">Clavarder</string>
+    <string name="entrez_un_message">Entrez un message</string>
+    <string name="demander_un_indice">Indice?</string>
+    <string name="jouer">Jouer !</string>
+    <string name="profil">Profil</string>
+    <string name="classement">Classement</string>
+    <string name="tuto_play_1">En appuyant sur Jouer!, une page s\'affiche depuis laquelle vous pouvez sélectionner le mode de jeu que vous désirez, ainsi que la difficulté. La difficulté détermine avant tout la complexité des dessins que vous verrez en cours de partie. Plus de détails sont donnés à travers les prochaines sections.</string>
+    <string name="tuto_play_2">Pour créer une partie, il suffit d\'appuyer sur CRÉER UNE PARTIE sur la page suivante:</string>
+    <string name="tuto_ask_hint">Un certain nombre d\'indices est associé à chaque mot. Pour les recevoir, il suffit d\'appuyer sur le bouton prévu à cet effet de la manière suivante: Vous ne serez pas pénalisé pour avoir demandé des indices, mais soyez sûr de vous, car vos adversaires les verront aussi!</string>
+    <string name="tuto_draw_1">Le crayon permet de dessiner en promenant son doigt sur la zone de dessin. Il est aussi possible de choisir une épaisseur ainsi qu\'une couleur dans le menu d\'outils.</string>
+    <string name="tuto_draw_2">L\'efface permet d\'effacer des traits présents en promenant son doigt sur la zone de dessin. Lorsque cet outil est sélectionné, il est possible de changer l\'épaisseur en sélectionnant l\'outil d\'épaisseur.</string>
+    <string name="tuto_draw_3">La palette de couleurs permet de sélectionner une couleur de trait comme suit :</string>
+    <string name="tuto_draw_4">L’option ANNULER (flèche vers la gauche) permet d\'annuler les dernières actions qui ont été exécutées depuis le début du travail. L’option REFAIRE (flèche vers la droite) permet de rétablir les actions annulées.</string>
+    <string name="tuto_draw_5">L\'outil d\'épaisseur vous permet d\'augmenter l\'épaisseur de votre crayon ou de votre efface.</string>
+    <string name="tuto_chat_1">Pour clavarder, il suffit d\'entrer un message dans la barre de texte à la droite de l\'écran, puis d\'appuyer sur le bouton Envoyer de la manière suivante: À noter que la touche Entrer peut également être utilisée pour envoyer.</string>
+    <string name="tuto_chat_2">Il est possible de créer un nouveau salon de clavardage en appuyant sur le bouton + à la droite de l\'écran. Sur la nouvelle fenêtre, le nom du salon peut être choisi, ainsi que le premier membre qui fera partie du groupe.</string>
+    <string name="tuto_chat_3">Dans le cas d\'un salon de clavardage existant, en appuyant sur le bouton à la droite de CRÉER UN CLAVARDAGE, il est possible d\'ajouter des personnes au salon:</string>
+    <string name="tuto_chat_4">Pour alterner entre les différents salons de clavardage auxquels vous avez accès, simplement cliquez sur le salon dans la section à droite de l\'écrant:</string>
+    <string name="tuto_chat_5">L\'icône d\'une bulle de clavardage avec un X permet de supprimer un canal de discussion</string>
+    <string name="tuto_profil_1">Votre profil contient toutes sortes d\'informations rattachées à votre compte, dont vos statistiques et historique de jeu. Voici comment accéder à ces informations:</string>
+    <string name="tuto_leaderboard">Le classement permet de voir où vous vous situez par rapport aux autres joueurs selon vos statistiques de jeu. Il y a 4 catégories:\nNombre de parties jouées (tous modes confondus)\nNombre de parties gagnées (pour le mode solo, vous êtes un vainqueur à nos yeux si vous arrivez à deviner 1 mot)\nTemps moyen des parties jouées (en minutes)\nTemps de jeu total (en heures)\nPlus gros sont les chiffres, mieux vous vous positionnez... Alors n\'attendez plus et allez jouer!</string>
+    <string name="tuto_send_answer">La barre de clavardage sert autant à communiquer librement qu\'à transmettre des tentatives pour deviner. La barre de clavardage sert autant à communiquer librement qu\'à transmettre des tentatives pour deviner. Lors d\'une tentative de réponse, vous devez écrire le mot sans accent, au singulier et sans espace. Voici quoi faire pour envoyer une réponse:</string>
+
+</resources>

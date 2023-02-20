@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+}
+
+.grid-area-chat {
+    grid-area: textchat;
+    z-index: 1;
+}
+
+.chat-fixed-offset {
+    position: fixed;
+    right: 0;
+    width: 302px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+@keyframes bounce {
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    60% {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
+.button1,
+.button2,
+.button3,
+.button4 {
+    margin-top: 30px;
+    text-align: center;
+    width: 500px;
+    height: 60px;
+    font-size: 25px;
+    font-family: Gillsans, sans-serif;
+    color: white;
+    background-color: rgb(53, 53, 79);
+    border-color: rgb(53, 53, 79);
+    border-radius: 15px;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    cursor: pointer;
+}
+
+.button1:hover,
+.button2:hover,
+.button3:hover,
+.button4:hover {
+    background-color: rgb(95, 95, 145);
+    color: white;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+}
+
+.title {
+    text-align: center;
+    color: rgb(69, 66, 94);
+    font-size: 8em;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+        0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    font-family: Gillsans, sans-serif;
+}
+
+.footer-item {
+    text-align: center;
+    font-family: Gillsans, sans-serif;
+}

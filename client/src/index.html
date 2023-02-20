@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Poly Dessin</title>
+        <base href="/" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    </head>
+    <body>
+        <app-root></app-root>
+        <script>
+            var electron = require('electron');
+            var BrowserWindow = require('electron');
+            var ipcMain = require('electron');
+            var ipcRenderer = require('electron');
+            window.addEventListener('mouseup', (e) => {
+                if (e.button === 3 || e.button === 4) e.preventDefault();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<div id="container">
+	<div id="white">
+		<h2 class="title">Draw It Up!</h2>
+		<form id="form-group" [formGroup]="loginForm" (keyup.enter)="login()">
+			<mat-form-field id="email" appearance="outline">
+            <label >Email</label>
+				<input matInput type="email" formControlName="email" />
+				<mat-error *ngIf="this.loginForm.controls.email.invalid" >
+					Veuillez saisir un e-mail valide !!
+				</mat-error>
+			</mat-form-field>
+			<mat-form-field id="password" appearance="outline">
+                <label >mot de passe </label>
+				<input matInput type="password" formControlName="password" />
+			</mat-form-field>
+			<mat-error *ngIf="fail" >
+				Veuillez vérifier votre adresse e-mail et votre mot de passe !!
+			</mat-error>
+			<div id="login-div">
+				<mat-spinner *ngIf="waiting" diameter="25"></mat-spinner>
+				<button id="login-button" *ngIf="!waiting" id="login-button" mat-flat-button color="primary" type="submit"
+					(click)="login()" >
+					Se connecter
+				</button>
+			</div>
+			<div id = "bottom-container">
+				<button id= forgot-password routerLink="/forgotPassword" mat-flat-button>
+					Mot de passe oublié ?
+				</button>
+				<button id="register" routerLink="/createAccount" mat-flat-button>
+					 Créer un compte
+				</button>
+			</div>
+		</form>
+	</div>
+</div>

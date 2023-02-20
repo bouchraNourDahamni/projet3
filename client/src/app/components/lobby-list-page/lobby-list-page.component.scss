@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    width: auto;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.grid-area-chat {
+    grid-area: textchat;
+    z-index: 1;
+}
+
+.chat-fixed-offset {
+    position: fixed;
+    right: 0;
+    width: 302px;
+}
+
+.buttonDiv{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.formTitle{
+    text-align: center;
+    color: #302e40;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+.listeLobby{
+    display: block;
+    width: calc(100% - 300px);
+}
+.tooltip {
+    visibility: hidden;
+}
+
+.has-tooltip:hover .tooltip {
+    visibility: visible;
+    z-index: -1;
+}

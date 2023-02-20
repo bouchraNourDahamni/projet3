@@ -1,0 +1,19 @@
+{
+  "logs": [
+    {
+      "outputFile": "D:\\Gerard\\Documents\\POLY\\3RD YEAR\\SESSION 2\\LOG3990 - Projet 3\\log3900-210\\android\\app\\lint\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+      "map": [
+        {
+          "source": "C:\\Users\\Gerard\\.gradle\\caches\\transforms-2\\files-2.1\\612da0a59bad0f9ec1b95c928707fa8e\\appcompat-1.1.0\\res\\values-port\\values-port.xml",
+          "from": {
+            "startLines": "2",
+            "startColumns": "4",
+            "startOffsets": "55",
+            "endColumns": "55",
+            "endOffsets": "106"
+          }
+        }
+      ]
+    }
+  ]
+}

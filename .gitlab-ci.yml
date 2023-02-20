@@ -1,0 +1,186 @@
+image: xwiillz/node-chromium-mongo:lts-bionic
+
+cache:
+    key: '${CI_COMMIT_REF_SLUG}-client'
+    paths:
+        - client/node_modules/
+        - server/node_modules/
+        - android/node_modules/
+    policy: pull
+
+.only-client: &only-client
+    only:
+        refs:
+            - master
+            - merge_requests
+        changes:
+            - client/**/*
+    cache:
+        key: '${CI_COMMIT_REF_SLUG}-client'
+        paths:
+            - client/node_modules/
+        policy: pull
+
+.only-server: &only-server
+    image: golang:1.15
+    only:
+        refs:
+            - master
+            - merge_requests
+        changes:
+            - server/**/*
+    cache:
+        key: '${CI_COMMIT_REF_SLUG}-server'
+        paths:
+            - server/.cache/
+        policy: pull
+    before_script:
+        - cd server
+
+.only-android: &only-android
+    image: openjdk:8-jdk
+    only:
+        refs:
+            - master
+            - merge_requests
+        changes:
+            - android/**/*
+    cache:
+        key: '${CI_COMMIT_REF_SLUG}-server'
+        paths:
+            - android/node_modules/
+        policy: pull
+    variables:
+        ANDROID_COMPILE_SDK: '30'
+        ANDROID_BUILD_TOOLS: '30.0.3'
+        ANDROID_SDK_TOOLS: '6858069'
+    before_script:
+        - apt-get --quiet update --yes
+        - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
+        - cd android
+        - wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_TOOLS}_latest.zip
+        - unzip -d android-sdk-linux android-sdk.zip
+        - mkdir -p tmp
+        - mv android-sdk-linux/cmdline-tools/* tmp
+        - mkdir -p android-sdk-linux/cmdline-tools/latest
+        - mv tmp/* android-sdk-linux/cmdline-tools/latest
+        - rm -r tmp
+        - echo y | android-sdk-linux/cmdline-tools/latest/bin/sdkmanager  "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null
+        - echo y | android-sdk-linux/cmdline-tools/latest/bin/sdkmanager "platform-tools" >/dev/null
+        - echo y | android-sdk-linux/cmdline-tools/latest/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null
+        - export ANDROID_HOME=$PWD/android-sdk-linux
+        - export PATH=$PATH:$PWD/android-sdk-linux/platform-tools/
+        - chmod +x ./gradlew
+        # temporarily disable checking for EPIPE error and use yes to accept all licenses
+        - set +o pipefail
+        - yes | android-sdk-linux/tools/bin/sdkmanager --licenses
+        - set -o pipefail
+
+stages:
+    - install
+    - lint
+    - build
+    - test
+
+install:client:
+    stage: install
+    <<: *only-client
+    script:
+        - cd client
+        - npm ci --cache .npm --prefer-offline
+    cache:
+        key: '${CI_COMMIT_REF_SLUG}-client'
+        paths:
+            - client/node_modules/
+            - client/.npm/
+        policy: pull-push
+
+install:server:
+    stage: install
+    <<: *only-server
+    script:
+        - mkdir -p .cache
+        - export GOPATH="$CI_PROJECT_DIR/.cache"
+        - go get -v -d ./...
+    cache:
+        key: '${CI_COMMIT_REF_SLUG}-server'
+        paths:
+            - server/.cache
+        policy: pull-push
+
+lint:client:
+    stage: lint
+    <<: *only-client
+    script:
+        - cd client
+        - npm run lint
+
+lint:server:
+    allow_failure: true
+    stage: lint
+    <<: *only-server
+    script:
+        - make lint
+
+lint:android:
+    stage: lint
+    <<: *only-android
+    script:
+        - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
+
+build:client:
+    stage: build
+    <<: *only-client
+    script:
+        - cd client
+        - npm run build
+    artifacts:
+        paths:
+            - client/dist/
+
+build:server:
+    stage: build
+    <<: *only-server
+    script:
+        - go build -i -v ./...
+
+build:android:
+    stage: build
+    <<: *only-android
+    script:
+        - ./gradlew assembleDebug
+    artifacts:
+        paths:
+            - android/app/build/outputs/
+
+test:client:
+    allow_failure: true
+    stage: test
+    <<: *only-client
+    script:
+        - Xvfb :99 -ac -screen 0 1920x1080x24 &
+        - cd client
+        - npm run coverage -- --browsers=ChromeHeadlessNoSandbox --watch=false
+    dependencies:
+        - build:client
+    artifacts:
+        paths:
+            - client/coverage/
+        reports:
+            cobertura: client/coverage/cobertura-coverage.xml
+
+test:server:
+    stage: test
+    <<: *only-server
+    script:
+        - make test
+    dependencies:
+        - build:server
+
+test:android:
+    stage: test
+    <<: *only-android
+    script:
+        - ./gradlew -Pci --console=plain :app:testDebug
+    dependencies:
+        - build:android

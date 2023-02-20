@@ -1,0 +1,139 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<div class="container">
+  <div class="profile">
+    <div class="profile-content custom-container">
+      <div class="profile-sections flex flex-row">
+        <div class="profile-menu flex flex-column flex-justify-content-center flex-align-items-center">
+          <div class="profile-menu-item profile-avatar flex flex-align-items-center">
+            <h5>
+              <img width="100px" width="100px" [src]="avatar" alt="Avatar" />
+            </h5>
+            <h6>{{ profile?.public.pseudo }}</h6>
+          </div>
+          <div class="profile-menu-item vertical-tabs">
+            <app-tabs #verticalTabs>
+              <app-tab label="Informations d'utilisateur" value="user"></app-tab>
+              <app-tab label="Informations de jeu" value="jeu"></app-tab>
+              <app-tab label="Informations de connexion" value="connexion"></app-tab>
+              <app-tab label="Trophées" value="trophy"></app-tab>
+            </app-tabs>
+          </div>
+        </div>
+        <div class="profile-description">
+          <div *ngIf="verticalTabs.value === 'user'">
+            <mat-list role="list">
+              <mat-list-item role="listitem">
+                <h3>Temps moyen d'une partie:</h3>
+              </mat-list-item>
+              <mat-list-item role="listitem">{{ profile?.statistics.avarageTime }} </mat-list-item>
+              <mat-list-item role="listitem">
+                <h3>Temps total joué:</h3>
+              </mat-list-item>
+              <mat-list-item role="listitem">{{ profile?.statistics.totalTime }}</mat-list-item>
+              <mat-list-item role="listitem">
+                <h3>Nombre de parties jouées:</h3>
+              </mat-list-item>
+              <mat-list-item role="listitem">{{ profile?.statistics.games }}</mat-list-item>
+              <mat-list-item role="listitem">
+                <h3>Pourcentage de parties gagnées:</h3>
+                {{ profile?.statistics.winRatio }}
+              </mat-list-item>
+              <mat-list-item role="listitem">{{ profile?.statistics.winRatio }}</mat-list-item>
+            </mat-list>
+          </div>
+          <div *ngIf="verticalTabs.value === 'jeu'">
+            <h2>Mode classique</h2>
+            <table mat-table [dataSource]="profile?.history.gameHistory.Classic" class="mat-elevation-z8">
+              <!-- Debut Column -->
+              <ng-container matColumnDef="Début">
+                <th mat-header-cell *matHeaderCellDef>Début</th>
+                <td mat-cell *matCellDef="let element">{{ convertToLocalTime(element.basicgamehistory.start) }}</td>
+              </ng-container>
+
+              <!-- Fin Column -->
+              <ng-container matColumnDef="Fin">
+                <th mat-header-cell *matHeaderCellDef>Fin</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ convertToLocalTime(element.basicgamehistory.end) }}
+                </td>
+              </ng-container>
+
+              <!--  Joueurs Column -->
+              <ng-container matColumnDef="Joueurs">
+                <th mat-header-cell *matHeaderCellDef>Joueurs</th>
+                <td mat-cell *matCellDef="let element">{{ element.players }}</td>
+              </ng-container>
+
+              <!-- Resultat Column -->
+              <ng-container matColumnDef="Résultat">
+                <th mat-header-cell *matHeaderCellDef>Résultat</th>
+                <td mat-cell *matCellDef="let element">{{ element.result[profile?.email] ? 'Gagne!' :
+                  'Perd' }}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+            <h2>Mode solo</h2>
+            <table mat-table [dataSource]="profile?.history.gameHistory.Solo" class="mat-elevation-z8">
+              <!-- Debut Column -->
+              <ng-container matColumnDef="Début">
+                <th mat-header-cell *matHeaderCellDef>Début</th>
+                <td mat-cell *matCellDef="let element">{{ convertToLocalTime(element.basicgamehistory.start) }}</td>
+              </ng-container>
+
+              <!-- Fin Column -->
+              <ng-container matColumnDef="Fin">
+                <th mat-header-cell *matHeaderCellDef>Fin</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ convertToLocalTime(element.basicgamehistory.end) }}
+                </td>
+              </ng-container>
+
+              <!-- Resultat Column -->
+              <ng-container matColumnDef="Résultat">
+                <th mat-header-cell *matHeaderCellDef>Résultat</th>
+                <td mat-cell *matCellDef="let element">{{ element.result }}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="soloColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: soloColumns"></tr>
+            </table>
+          </div>
+          <div *ngIf="verticalTabs.value === 'connexion'">
+            <table mat-table [dataSource]="zipSessions()">
+              <ng-container matColumnDef="Connexions">
+                <th mat-header-cell *matHeaderCellDef>Connexions</th>
+                <td mat-cell *matCellDef="let element">{{ convertToLocalTime(element[0]) }}</td>
+              </ng-container>
+              <ng-container matColumnDef="Déconnexions">
+                <th mat-header-cell *matHeaderCellDef>Déconnexions</th>
+                <td mat-cell *matCellDef="let element">{{ convertToLocalTime(element[1]) }}</td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="connectionColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: connectionColumns"></tr>
+            </table>
+          </div>
+          <div *ngIf="verticalTabs.value === 'trophy'">
+            <table mat-table [dataSource]="profile?.trophies">
+              <ng-container matColumnDef="Trophées">
+                <th mat-header-cell *matHeaderCellDef>Trophées</th>
+                <td mat-cell *matCellDef="let element">{{ element }}</td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="tropheeColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: tropheeColumns"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttonDiv">
+      <button mat-raised-button type="button" (click)="exitLobby()">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="grid-area-chat">
+    <app-textchat class="chat-fixed-offset"></app-textchat>
+  </div>
+</div>

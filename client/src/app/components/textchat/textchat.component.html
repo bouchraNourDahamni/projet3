@@ -1,0 +1,72 @@
+<!--code used in this file was taken from https://getstream.io/blog/how-to-create-a-chat-app-with-angular-9/#signing-up-for-stream-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<div id="chat-container" class="container">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-select [(ngModel)]="currentChatroom" (selectionChange)="changeChat()" [placeholder]="currentChatroom">
+                <mat-option *ngFor="let chatroom of chatGame.chatIdList" [value]="chatroom">{{ chatroom }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-icon-button (click)="refreshChat()"><mat-icon>refresh</mat-icon></button>
+    </div>
+    <div class="mesgs">
+        <div class="msg_history" id="msg_history">
+            <li class="message" *ngFor="let message of chatGame.currentChatroom.history">
+                <div *ngIf="message.email !== currentEmail; then incoming_msg; else outgoing_msg"></div>
+                <ng-template #incoming_msg>
+                    <div class="incoming_msg_zone">
+                        <div class="incoming_msg_username">
+                            <p>{{ message.email }}</p>
+                        </div>
+                        <div class="incoming_msg">
+                            <div class="incoming_withd_msg">
+                                <p>{{ message.message }}</p>
+                            </div>
+                        </div>
+                        <div class="incoming_msg_time">
+                            <p>{{ message.sendDate }}</p>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template #outgoing_msg>
+                    <div class="outgoing_msg">
+                        <div class="incoming_msg">
+                            <div class="outgoing_withd_msg">
+                                <p>{{ message.message }}</p>
+                            </div>
+                        </div>
+                        <div class="outgoing_msg_time">
+                            <p>{{ message.sendDate }}</p>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+        </div>
+
+        <div class="type_msg">
+            <form class="input_msg_write" (ngSubmit)="sendMessage()">
+                <input type="text" class="write_msg" placeholder="Envoyer un message" name="newMessage" [(ngModel)]="newMessage" id="chatInput" />
+                <div class="msg_send_div">
+                    <button mat-raised-button color="primary" (click)="sendMessage()">
+                        <mat-icon>send</mat-icon>
+                    </button>
+                </div>
+            </form>
+            <div>
+                <button *ngIf="this.chatGame.gameManager.inGame" mat-raised-button color="accent" (click)="guessMessage()">
+                    <mat-icon>done_outline</mat-icon>
+                </button>
+                <button *ngIf="this.chatGame.gameManager.inGame" mat-raised-button class="hint" (click)="askHint()">
+                    <mat-icon>help_outline</mat-icon>
+                </button>
+            </div>
+            <br />
+            <div>
+                <button mat-raised-button class="boutonBas" (click)="windowMode()"><mat-icon>open_in_new</mat-icon></button>
+                <button mat-raised-button class="boutonBas" (click)="createChat()"><mat-icon>add</mat-icon></button>
+                <button mat-raised-button class="boutonBas" (click)="addMember()"><mat-icon>group_add</mat-icon></button>
+                <button mat-raised-button class="boutonBas" (click)="deleteChat()"><mat-icon>delete</mat-icon></button>
+            </div>
+        </div>
+    </div>
+</div>
